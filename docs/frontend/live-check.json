@@ -1,0 +1,250 @@
+{
+  "timestamp": "2026-09-27T17:40:19.435Z",
+  "sourceCommit": "41942e8d9335e3f4e35738eb008e5bb9245baf10",
+  "rpcs": [
+    {
+      "url": "https://ethereum-sepolia-rpc.publicnode.com",
+      "chainId": 11155111,
+      "snapshot": {
+        "block": "11794885",
+        "blockHash": "0x55f4f6ac2cde05e9c70068aefd86747c0aa0298ce89cbaacf08b3776d1822c97",
+        "timestamp": "1790530812",
+        "loadedAt": 1790530819714,
+        "sqrt": "560227709747861399187319382274582",
+        "tick": 177284,
+        "liquidity": "0",
+        "reference": "560227709747861399187319382274582",
+        "lower": "531478671342887130888305148483014",
+        "upper": "587571778973656496026398196082711",
+        "setThisBlock": false,
+        "refBlock": "0",
+        "decimals": 18,
+        "symbol": "CBRK",
+        "supply": "1000000000000000000000000000",
+        "eth": "0",
+        "tokens": "0",
+        "allowance": "0",
+        "events": [],
+        "eventError": "",
+        "verified": true,
+        "routerReady": false
+      },
+      "code": [
+        {
+          "name": "CBRK",
+          "address": "0x7f2ed4fdd432222bdc70d4c00903457eda378168",
+          "bytes": 2469,
+          "keccak256": "0xcbe85b92a657e1126f6952f3f5776e26eaf0114e76262ed290df9edfb73c3f91"
+        },
+        {
+          "name": "CircuitBreakerHook",
+          "address": "0x08867a47f30db1fc8e00d940438435d1a46b80c0",
+          "bytes": 5396,
+          "keccak256": "0x65045b31039bcd8881268df258bce4b19d58bbe64002a6f9047c98cac2e2af01"
+        },
+        {
+          "name": "StateView",
+          "address": "0xe1dd9c3fa50edb962e442f60dfbc432e24537e4c",
+          "bytes": 3531,
+          "keccak256": "0xaaed3db8eb8ebde8014ce4c8a3938496687f4c6374e17a7d735288f6c65ceb9e"
+        },
+        {
+          "name": "Quoter",
+          "address": "0x61b3f2011a92d183c7dbadbda940a7555ccf9227",
+          "bytes": 5820,
+          "keccak256": "0xf481a751ac453d40c46d12360b85b05472028c1b113ab63749d69a5f8b0e47d1"
+        },
+        {
+          "name": "UniversalRouter (listed, not used)",
+          "address": "0x3a9d48ab9751398bbfa63ad67599bb04e4bdf98b",
+          "bytes": 19540,
+          "keccak256": "0x14f7c9253a5406bafa90cb512f4a2db2a10513886603e7a9b4a2e72329e944f4"
+        }
+      ],
+      "checks": [
+        {
+          "side": "buy",
+          "input": "1000000000",
+          "result": "pass",
+          "output": "49630163899852147",
+          "block": "11794885"
+        },
+        {
+          "side": "buy",
+          "input": "1000000000000000000",
+          "kind": "trip",
+          "message": "Would trip the circuit breaker. This swap leaves the block’s ±10% price band. Reduce the amount and check again."
+        },
+        {
+          "side": "sell",
+          "input": "1000000000000000000",
+          "kind": "trip",
+          "message": "Would trip the circuit breaker. This swap leaves the block’s ±10% price band. Reduce the amount and check again."
+        }
+      ]
+    },
+    {
+      "url": "https://rpc.sepolia.ethpandaops.io",
+      "chainId": 11155111,
+      "snapshot": {
+        "block": "11794885",
+        "blockHash": "0x55f4f6ac2cde05e9c70068aefd86747c0aa0298ce89cbaacf08b3776d1822c97",
+        "timestamp": "1790530812",
+        "loadedAt": 1790530820315,
+        "sqrt": "560227709747861399187319382274582",
+        "tick": 177284,
+        "liquidity": "0",
+        "reference": "560227709747861399187319382274582",
+        "lower": "531478671342887130888305148483014",
+        "upper": "587571778973656496026398196082711",
+        "setThisBlock": false,
+        "refBlock": "0",
+        "decimals": 18,
+        "symbol": "CBRK",
+        "supply": "1000000000000000000000000000",
+        "eth": "0",
+        "tokens": "0",
+        "allowance": "0",
+        "events": [],
+        "eventError": "",
+        "verified": true,
+        "routerReady": false
+      },
+      "code": [
+        {
+          "name": "CBRK",
+          "address": "0x7f2ed4fdd432222bdc70d4c00903457eda378168",
+          "bytes": 2469,
+          "keccak256": "0xcbe85b92a657e1126f6952f3f5776e26eaf0114e76262ed290df9edfb73c3f91"
+        },
+        {
+          "name": "CircuitBreakerHook",
+          "address": "0x08867a47f30db1fc8e00d940438435d1a46b80c0",
+          "bytes": 5396,
+          "keccak256": "0x65045b31039bcd8881268df258bce4b19d58bbe64002a6f9047c98cac2e2af01"
+        },
+        {
+          "name": "StateView",
+          "address": "0xe1dd9c3fa50edb962e442f60dfbc432e24537e4c",
+          "bytes": 3531,
+          "keccak256": "0xaaed3db8eb8ebde8014ce4c8a3938496687f4c6374e17a7d735288f6c65ceb9e"
+        },
+        {
+          "name": "Quoter",
+          "address": "0x61b3f2011a92d183c7dbadbda940a7555ccf9227",
+          "bytes": 5820,
+          "keccak256": "0xf481a751ac453d40c46d12360b85b05472028c1b113ab63749d69a5f8b0e47d1"
+        },
+        {
+          "name": "UniversalRouter (listed, not used)",
+          "address": "0x3a9d48ab9751398bbfa63ad67599bb04e4bdf98b",
+          "bytes": 19540,
+          "keccak256": "0x14f7c9253a5406bafa90cb512f4a2db2a10513886603e7a9b4a2e72329e944f4"
+        }
+      ],
+      "checks": [
+        {
+          "side": "buy",
+          "input": "1000000000",
+          "result": "pass",
+          "output": "49630163899852147",
+          "block": "11794885"
+        },
+        {
+          "side": "buy",
+          "input": "1000000000000000000",
+          "kind": "trip",
+          "message": "Would trip the circuit breaker. This swap leaves the block’s ±10% price band. Reduce the amount and check again."
+        },
+        {
+          "side": "sell",
+          "input": "1000000000000000000",
+          "kind": "trip",
+          "message": "Would trip the circuit breaker. This swap leaves the block’s ±10% price band. Reduce the amount and check again."
+        }
+      ]
+    },
+    {
+      "url": "https://sepolia.rpc.sentio.xyz",
+      "chainId": 11155111,
+      "snapshot": {
+        "block": "11794885",
+        "blockHash": "0x55f4f6ac2cde05e9c70068aefd86747c0aa0298ce89cbaacf08b3776d1822c97",
+        "timestamp": "1790530812",
+        "loadedAt": 1790530821869,
+        "sqrt": "560227709747861399187319382274582",
+        "tick": 177284,
+        "liquidity": "0",
+        "reference": "560227709747861399187319382274582",
+        "lower": "531478671342887130888305148483014",
+        "upper": "587571778973656496026398196082711",
+        "setThisBlock": false,
+        "refBlock": "0",
+        "decimals": 18,
+        "symbol": "CBRK",
+        "supply": "1000000000000000000000000000",
+        "eth": "0",
+        "tokens": "0",
+        "allowance": "0",
+        "events": [],
+        "eventError": "",
+        "verified": true,
+        "routerReady": false
+      },
+      "code": [
+        {
+          "name": "CBRK",
+          "address": "0x7f2ed4fdd432222bdc70d4c00903457eda378168",
+          "bytes": 2469,
+          "keccak256": "0xcbe85b92a657e1126f6952f3f5776e26eaf0114e76262ed290df9edfb73c3f91"
+        },
+        {
+          "name": "CircuitBreakerHook",
+          "address": "0x08867a47f30db1fc8e00d940438435d1a46b80c0",
+          "bytes": 5396,
+          "keccak256": "0x65045b31039bcd8881268df258bce4b19d58bbe64002a6f9047c98cac2e2af01"
+        },
+        {
+          "name": "StateView",
+          "address": "0xe1dd9c3fa50edb962e442f60dfbc432e24537e4c",
+          "bytes": 3531,
+          "keccak256": "0xaaed3db8eb8ebde8014ce4c8a3938496687f4c6374e17a7d735288f6c65ceb9e"
+        },
+        {
+          "name": "Quoter",
+          "address": "0x61b3f2011a92d183c7dbadbda940a7555ccf9227",
+          "bytes": 5820,
+          "keccak256": "0xf481a751ac453d40c46d12360b85b05472028c1b113ab63749d69a5f8b0e47d1"
+        },
+        {
+          "name": "UniversalRouter (listed, not used)",
+          "address": "0x3a9d48ab9751398bbfa63ad67599bb04e4bdf98b",
+          "bytes": 19540,
+          "keccak256": "0x14f7c9253a5406bafa90cb512f4a2db2a10513886603e7a9b4a2e72329e944f4"
+        }
+      ],
+      "checks": [
+        {
+          "side": "buy",
+          "input": "1000000000",
+          "result": "pass",
+          "output": "49630163899852147",
+          "block": "11794885"
+        },
+        {
+          "side": "buy",
+          "input": "1000000000000000000",
+          "kind": "trip",
+          "message": "Would trip the circuit breaker. This swap leaves the block’s ±10% price band. Reduce the amount and check again."
+        },
+        {
+          "side": "sell",
+          "input": "1000000000000000000",
+          "kind": "trip",
+          "message": "Would trip the circuit breaker. This swap leaves the block’s ±10% price band. Reduce the amount and check again."
+        }
+      ]
+    }
+  ],
+  "routingLimitation": "The supplied network has no PoolSwapTest. No router outside that network was used; no transactions were broadcast."
+}

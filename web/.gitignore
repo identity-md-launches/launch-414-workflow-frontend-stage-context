@@ -1,0 +1,12 @@
+# Path budget: web/.gitignore only, at most 1024 bytes.
+# Match dependency and cache directories at every depth below web/.
+node_modules/
+.npm/
+.pnpm-store/
+.yarn/
+.cache/
+.vite/
+playwright-report/
+test-results/
+*.tsbuildinfo
+*.tgz

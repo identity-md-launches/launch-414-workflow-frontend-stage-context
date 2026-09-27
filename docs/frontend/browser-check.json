@@ -1,0 +1,197 @@
+{
+  "timestamp": "2026-09-27T17:52:30.475Z",
+  "url": "http://127.0.0.1:38913/preview/",
+  "checks": [
+    {
+      "name": "production subpath loads all assets and verified runtime ABIs",
+      "result": "passed"
+    },
+    {
+      "name": "no-wallet recovery and field validation",
+      "result": "passed"
+    },
+    {
+      "name": "invalid price tolerance focuses and labels the correct field",
+      "result": "passed"
+    },
+    {
+      "name": "pre-check refreshes the latest block before simulation",
+      "result": "passed"
+    },
+    {
+      "name": "typed buy simulation passes, never sends a transaction",
+      "result": "passed"
+    },
+    {
+      "name": "changing amount invalidates the successful check",
+      "result": "passed"
+    },
+    {
+      "name": "nested Tripped and PhantomSwap errors differ from RPC failure",
+      "result": "passed"
+    },
+    {
+      "name": "current-block ReferenceSet and log failure keep view reads clear",
+      "result": "passed"
+    },
+    {
+      "name": "missing deployed code disables pre-checks",
+      "result": "passed"
+    },
+    {
+      "name": "keyboard reaches input and triggers pre-check; focus ring is present",
+      "result": "passed"
+    },
+    {
+      "name": "responsive reflow at 1440px",
+      "result": "passed"
+    },
+    {
+      "name": "responsive reflow at 820px",
+      "result": "passed"
+    },
+    {
+      "name": "responsive reflow at 390px",
+      "result": "passed"
+    },
+    {
+      "name": "responsive reflow at 320px",
+      "result": "passed"
+    },
+    {
+      "name": "200% text enlargement reflows at 820px",
+      "result": "passed"
+    },
+    {
+      "name": "reduced motion disables button transitions",
+      "result": "passed"
+    },
+    {
+      "name": "wallet connection, unknown-chain add and switch",
+      "result": "passed"
+    },
+    {
+      "name": "supplied manifest blocks signing even after passing check",
+      "result": "passed"
+    },
+    {
+      "name": "account change clears quote and refreshes balances",
+      "result": "passed"
+    },
+    {
+      "name": "mock-only approved-router buy simulates and confirms transaction",
+      "result": "passed"
+    },
+    {
+      "name": "mock sell approval grants only input amount to approved router",
+      "result": "passed"
+    },
+    {
+      "name": "mock sell and wallet rejection remain recoverable",
+      "result": "passed"
+    },
+    {
+      "name": "execution simulation failure prevents wallet broadcast",
+      "result": "passed"
+    },
+    {
+      "name": "a new block invalidates a previous quote",
+      "result": "passed"
+    },
+    {
+      "name": "live production export reads Sepolia without wallet",
+      "result": "passed"
+    }
+  ],
+  "screenshots": [
+    {
+      "path": "docs/frontend/mock-1440.png",
+      "kind": "mocked chain",
+      "width": 1440
+    },
+    {
+      "path": "docs/frontend/mock-820.png",
+      "kind": "mocked chain",
+      "width": 820
+    },
+    {
+      "path": "docs/frontend/mock-390.png",
+      "kind": "mocked chain",
+      "width": 390
+    },
+    {
+      "path": "docs/frontend/mock-320.png",
+      "kind": "mocked chain",
+      "width": 320
+    },
+    {
+      "path": "docs/frontend/live-1440.png",
+      "kind": "live Sepolia",
+      "width": 1440
+    },
+    {
+      "path": "docs/frontend/live-390.png",
+      "kind": "live Sepolia",
+      "width": 390
+    }
+  ],
+  "consoleErrors": [],
+  "failedResources": [],
+  "axe": [
+    {
+      "width": 1440,
+      "violations": []
+    },
+    {
+      "width": 820,
+      "violations": []
+    },
+    {
+      "width": 390,
+      "violations": []
+    },
+    {
+      "width": 320,
+      "violations": []
+    }
+  ],
+  "contrast": [
+    {
+      "selector": ".intro-copy",
+      "foreground": "rgb(97, 105, 95)",
+      "background": "rgb(245, 244, 239)",
+      "ratio": 5.1619876308863475
+    },
+    {
+      "selector": ".spot-price",
+      "foreground": "rgb(35, 43, 39)",
+      "background": "rgb(255, 254, 250)",
+      "ratio": 14.387728137276037
+    },
+    {
+      "selector": ".primary",
+      "foreground": "rgb(255, 254, 250)",
+      "background": "rgb(52, 77, 35)",
+      "ratio": 9.323790985500041
+    },
+    {
+      "selector": ".result-label",
+      "foreground": "rgb(49, 93, 54)",
+      "background": "rgb(239, 244, 231)",
+      "ratio": 6.8243769917340265
+    },
+    {
+      "selector": ".route-notice",
+      "foreground": "rgb(97, 105, 95)",
+      "background": "rgb(255, 254, 250)",
+      "ratio": 5.632997461177805
+    },
+    {
+      "selector": ".reference-note",
+      "foreground": "rgb(97, 105, 95)",
+      "background": "rgb(245, 244, 239)",
+      "ratio": 5.1619876308863475
+    }
+  ],
+  "result": "passed"
+}

@@ -1,0 +1,53 @@
+{
+  "chainId": 11155111,
+  "repoUrl": "https://github.com/identity-md-launches/launch-301-circuitbreakerhook",
+  "version": 1,
+  "launchId": "00b25984-d932-4bf4-a97b-5a725e929c73",
+  "manifest": {
+    "hook": {
+      "contract": "CircuitBreakerHook",
+      "permissions": [
+        "beforeSwap",
+        "afterSwap"
+      ],
+      "constructorArgs": [
+        "0xE03A1074c86CFeDd5C142C4F04F1a1536e203543"
+      ]
+    },
+    "kind": "univ4_hook",
+    "pool": {
+      "fee": 3000,
+      "tickSpacing": 60,
+      "initialPrice": "158570052814919122920977766972888",
+      "pairedCurrency": "0x0000000000000000000000000000000000000000"
+    },
+    "notes": "Sepolia native-ETH/CBRK pool: currency0 is native ETH, currency1 is CBRK, fee 3000 (static, never overridden), tickSpacing 60. initialPrice is decimal sqrtPriceX96 from TickMath.getSqrtPriceAtTick(152040), the opening tick test/utils/LaunchParams.sol pins for the launch rehearsal (about 4,005,700 CBRK per ETH); the factory seeds one-sided CBRK liquidity below it. The hook's sole constructor argument is the Sepolia PoolManager. getHookPermissions enables exactly beforeSwap and afterSwap (low address bits 0x00C0, HOOK_FLAGS); all other flags, including every return delta, are false, and the constructor calls Hooks.validateHookPermissions so the CREATE2 salt must be mined for those bits. Behaviour, per PoolId and per block: beforeSwap of the block's first swap stores refBlock and refSqrtPrice from getSlot0 (the price before that swap) and emits ReferenceSet. afterSwap reads the post-swap sqrtPriceX96 and reverts with Tripped(ref, new) unless ref*sqrt(0.9) <= new <= ref*sqrt(1.1), i.e. the spot price is within +/-10% of the reference; the Q96 constants SQRT_0_9_X96 and SQRT_1_1_X96 and the FullMath roundings all lean inward. The check covers a block's first swap, so a single trade moving the price more than 10% cannot execute and must be split across blocks. afterSwap then reverts with PhantomSwap(ref, new) when the PoolManager's swap delta is zero in both currencies: such a swap only slid the price through ticks holding no liquidity, and refusing it stops a costless slide from becoming the next block's reference (the independent review's ratchet finding on the one-sided seed). The band is checked first, so a phantom move outside the band reports Tripped. Reverts leave no state and no event; the site simulates swaps to detect trips. Initialization, liquidity changes and donations have no enabled callbacks, so nothing in the hook can revert the factory's initialize or seed. Pools whose currency0 is not native ETH get zero deltas and no reference, event or check. All callbacks require msg.sender == PoolManager; the eight disabled callbacks also refuse other callers, then revert HookNotImplemented. The hook charges no fee, takes no deltas, holds no funds, ignores hookData and has no owner, setter, pause, upgrade or sweep; every threshold is a source constant. Documented exposures: with live liquidity, pushing the price to a band edge blocks further same-direction swaps for the rest of that block (moves back inside the band still pass; the next block re-anchors). On the one-sided launch pool, a dust ETH-only position parked just above the opening tick lets a dust sell walk the reference up by 10% per block at a cost of wei; the phantom-swap rule does not close this. README.md records both with the test names. Views for the site: currentReference, currentBand, allowedBand, isWithinBand, wouldTrip, refBlock, refSqrtPrice. CBRK is a fixed-supply ERC-20 with a zero-argument constructor, 18 decimals, minted once to msg.sender, no mint or admin. ABI exports: docs/abi/CircuitBreakerHook.json and docs/abi/CBRK.json. This manifest is a technical description; launch policy and signed artifact linkage are supplied separately by services.",
+    "token": {
+      "name": "Breaker",
+      "symbol": "CBRK",
+      "contract": "CBRK",
+      "decimals": 18
+    }
+  },
+  "contracts": [
+    {
+      "name": "CBRK",
+      "txHash": "0xcb4cdf6a1605626f62091aba084cc14818a8a15c8bdc040354d4757083ac12f9",
+      "abiHash": "f36d2fe28b62f817a4fba0b78bb501b41895eada3982280273c063ad8183f577",
+      "address": "0x7f2ed4fdd432222bdc70d4c00903457eda378168",
+      "blockNumber": 11792086,
+      "creationCodeHash": "cb91338c9b6d21ec4b817ba2fd7baa8b6d51feb9c571b27107dbe8f70090286f"
+    },
+    {
+      "name": "CircuitBreakerHook",
+      "txHash": "0xcb4cdf6a1605626f62091aba084cc14818a8a15c8bdc040354d4757083ac12f9",
+      "abiHash": "2748173e88d5a3d180c5f3ff285ec11500ca7e4d414209ce1c4b0d2feeec5473",
+      "address": "0x08867a47f30db1fc8e00d940438435d1a46b80c0",
+      "blockNumber": 11792086,
+      "creationCodeHash": "95b8a49539fe4e8c1242b9122060119c39d1c62dec896f4c699f85382ec27027"
+    }
+  ],
+  "sourceCommit": "41942e8d9335e3f4e35738eb008e5bb9245baf10",
+  "abiInstructions": "Build ABIs from this exact source commit; compare canonicalKeccak(abi) with abiHash. Verify deployed code on the stated chain before enabling transactions.",
+  "attestationHash": "130222d26e599f023fb166989f9cf78a3031ba8861465875ecb3d0cfc1e57fb6"
+}
